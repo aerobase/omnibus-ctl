@@ -480,8 +480,8 @@ EOM
 
     def remove_old_node_state
       node_cache_path = "#{base_path}/embedded/nodes/"
-      status = run_command("rm -rf #{node_cache_path}")
-      if !status.success?
+      FileUtils.rm_rf(node_cache_path)
+      if File.directory?(node_cache_path)
         log "Could not remove cached node state!"
         exit 1
       end

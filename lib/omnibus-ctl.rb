@@ -49,7 +49,7 @@ module Omnibus
       @data_path = "/var/opt/#{name}"
       @etc_path = "/etc/#{name}"
       @log_exclude = '(config|lock|@|gzip|tgz|gz)'
-      @log_path_exclude = ['*/sasl/*']
+      @log_path_exclude = ['*/sasl/*','*/logs/*']
       @fh_output = STDOUT
       @kill_users = []
       @verbose = false

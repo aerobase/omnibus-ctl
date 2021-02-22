@@ -498,7 +498,7 @@ EOM
         log_level = ""
       end
       remove_old_node_state
-      cmd = "#{base_path}/embedded/bin/chef-client #{log_level} -z -c #{base_path}/embedded/cookbooks/solo.rb -j #{attr_location}"
+      cmd = "#{base_path}/embedded/bin/chef-client #{log_level} -z -c #{base_path}/embedded/cookbooks/solo.rb -j #{attr_location} --chef-license accept-silent"
       cmd += " #{args}" unless args.empty?
       run_command(cmd)
     end
